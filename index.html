@@ -1,0 +1,56 @@
+<html>
+
+    <head>
+        <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="js/converter.js" type="text/javascript"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/converter.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="container text-center"> 
+            <h1>Welcome to YouTubeConvert!</h1>
+        </div>
+
+        <div class="container" style="max-width:800px;">
+            <p>YouTubeConvert provides an easy way to convert the audio in any YouTube video to an accurately tagged .mp3 file, ready to be instantly dropped into your music collection.</p>
+            <p>Just copy and past a link to a YouTube video you want to convert into the "link" field below. Then, fill out any pertinent tagging information you want. No field is mandatory, so feel free to leave any of them blank.</p>
+            <p>Then, click "Convert & Tag" and we'll produce a link for you behind the scenes. This website is hosted on a small machine due to limited funds, so this could take as long as 20 or 30 seconds.</p>
+            <p>When the link is made available to you, click it to instantly download your new .mp3 file.</p>
+        </div>
+
+        <div id="convert-div" class="container" style="max-width:400px;"> 
+            <form id="convert-form" method="get" action="downloads/convert.php">
+                <br>
+                <input class="form-control" id="URL" type="text" name="URL" placeholder="link">
+                <br>
+                <input class="form-control" id="TITLE" type="text" name="TITLE" placeholder="title">
+                <br>
+                <input class="form-control" id="ARTIST" type="text" name="ARTIST" placeholder="artist">
+                <br>
+                <input class="form-control" id="ALBUM" type="text" name="ALBUM" placeholder="album">
+                <br>
+                <input class="form-control" id="GENRE" type="text" name="GENRE" placeholder="genre">
+                <br>
+                <input class="form-control" id="YEAR" type="text" name="YEAR" placeholder="year">
+                <br>
+
+                <input class="btn btn-block btn-md btn-primary" type="submit" value="Convert & Tag">
+            </form>
+
+            <h3 id="convert-link"></h3>
+
+        </div>
+  
+    </body>
+
+    <script>
+        $(document).ready(function () {
+            converter.init();
+        });
+    </script>
+  
+</html>
+
+
